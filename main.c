@@ -30,7 +30,7 @@ int main(void)
 
 		if (execve(user_input, args, NULL) == -1 && bytes_numb != 1)
 		{
-			perror("./prompt");
+			perror("./shell");
 		}
 	}
 	free(user_input);
