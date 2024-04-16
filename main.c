@@ -10,6 +10,7 @@ int main(void)
 	char *user_input = NULL;
 	size_t len = 0;
 	ssize_t bytes_numb;
+	char *args[2];
 
 	while (1)
 	{
@@ -26,7 +27,8 @@ int main(void)
 		}
 		if (strlen(user_input) == 0)
 			continue;
-		char *args[] = {user_input, NULL};
+		args[0] = user_input;
+        args[1] = NULL;
 
 		if (execve(user_input, args, NULL) == -1 && bytes_numb != 1)
 		{
