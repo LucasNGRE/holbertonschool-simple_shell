@@ -1,6 +1,10 @@
 #include "main.h"
 #define MAX_COMMAND_LENGTH 100
-
+/**
+ * main - Entry point for the simple_shell
+ *
+ * Return: Always 0
+ */
 int main(void)
 {
 	char *user_input = NULL;
@@ -20,14 +24,14 @@ int main(void)
 			printf("\n");
 			break;
 		}
-		
 		if (strlen(user_input) == 0)
-            continue;
+			continue;
 		char *args[] = {user_input, NULL};
-        if (execve(user_input, args, NULL) == -1 && bytes_numb != 1)
-        {
-            perror("./prompt");
-        }
+
+		if (execve(user_input, args, NULL) == -1 && bytes_numb != 1)
+		{
+			perror("./prompt");
+		}
 	}
 	free(user_input);
 	return (0);
