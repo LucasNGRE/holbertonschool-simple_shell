@@ -3,27 +3,33 @@
 
 int main(void)
 {
-char *user_input = NULL;
-size_t len = 0;
-ssize_t bytes_numb;
+	char *user_input = NULL;
+	size_t len = 0;
+	ssize_t bytes_numb;
 
 	while (1)
 	{
-		printf("#cisfun$ ");
+		if (isatty(STDIN_FILENO))
+			printf("#cisfun$ ");
 		fflush(stdout);
 		bytes_numb = getline(&user_input, &len, stdin);
-		if (strcmp(user_input, "exit"))
-			break;
+		strtok(user_input, "\n");
+
 		if (bytes_numb == -1)
 		{
-			if (isatty(STDIN_FILENO))
-			{
-				printf("\n");
-				break;
-			}
+			printf("\n");
 			break;
 		}
+		
+		if (strlen(user_input) == 0)
+            continue;
+		char *args[] = {user_input, NULL};
+        if (execve(user_input, args, NULL) == -1 && bytes_numb != 1)
+        {
+            perror("./prompt");
+        }
 	}
+	free(user_input);
 	return (0);
 }
 
