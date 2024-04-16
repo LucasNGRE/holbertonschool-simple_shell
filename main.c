@@ -36,4 +36,3 @@ int main(void)
 	free(user_input);
 	return (0);
 }
-
