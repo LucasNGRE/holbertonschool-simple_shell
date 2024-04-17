@@ -4,7 +4,7 @@
  * @user_input: The command to execute
  * @args: An array of strings containing the command and its arguments
  */
-void execute(char *user_input, char **args)
+void execute(char **args)
 {
 	pid_t pid;
 	int status = EXIT_SUCCESS;
@@ -12,7 +12,7 @@ void execute(char *user_input, char **args)
 	pid = fork();
 	if (pid == 0)
 	{
-		if (execve(user_input, args, environ) == -1)
+		if (execve(args[0], args, environ) == -1)
 		{
 			perror("./shell");
 			exit(status);

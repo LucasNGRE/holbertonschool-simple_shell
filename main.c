@@ -1,5 +1,24 @@
 #include "main.h"
-#define MAX_COMMAND_LENGTH 100
+
+/**
+ * free_args - Free args
+ * @args: Arguments
+ * Return: void
+ */
+void free_args(char **args)
+{
+	int i = 0;
+
+	while (args[i])
+	{
+		dinfo("Freeing args[%d]: %s", i, args[i]);
+		free(args[i]);
+		i++;
+	};
+	dinfo("Freeing args");
+	free(args);
+}
+
 /**
  * main - Entry point for the simple_shell
  *
@@ -10,7 +29,7 @@ int main(void)
 	char *user_input = NULL;
 	size_t len = 0;
 	ssize_t bytes_numb;
-	char *args[2];
+	char **args;
 
 	while (1)
 	{
@@ -18,21 +37,20 @@ int main(void)
 			printf("#cisfun$ ");
 		fflush(stdout);
 		bytes_numb = getline(&user_input, &len, stdin);
-		strtok(user_input, "\n");
+		user_input[_strlen(user_input) - 1] = '\0';
+		dinfo("user_input: %s", user_input);
 
 		if (bytes_numb == -1)
 		{
 			printf("\n");
 			break;
 		}
-		if (strlen(user_input) == 0)
+		if (_strlen(user_input) == 0)
 			continue;
-		args[0] = user_input, args[1] = NULL;
 		if (bytes_numb <= 1)
 			continue;
-		execute(user_input, args);
-		free(user_input);
+		args = get_arg(user_input);
+		execute(args), free_args(args);
 	}
-
 	return (0);
 }
