@@ -27,13 +27,10 @@ int main(void)
 		}
 		if (strlen(user_input) == 0)
 			continue;
-		args[0] = user_input;
-        args[1] = NULL;
-
-		if (execve(user_input, args, NULL) == -1 && bytes_numb != 1)
-		{
-			perror("./shell");
-		}
+		args[0] = user_input, args[1] = NULL;
+		if (bytes_numb <= 1)
+			continue;
+		execute(user_input, args);
 	}
 	free(user_input);
 	return (0);
