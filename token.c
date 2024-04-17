@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * get_arg - Parse user input into arguments.
  *
@@ -24,10 +25,13 @@ char **get_arg(char *user_input)
 	tok = strtok(user_input, " ");
 	while (tok)
 	{
-		args[count] = tok;
+		dinfo("Current token: %s", tok);
+		args[count] = strdup(tok);
 		count++;
 		tok = strtok(NULL, " ");
+		dinfo("Setted token to: %s\n", args[count - 1]);
 	}
+	dsuccess("token count is %d\n", count);
 	args[count] = NULL;
 	return (args);
 }

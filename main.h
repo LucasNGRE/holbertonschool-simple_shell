@@ -4,10 +4,13 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/wait.h>
 #include <sys/types.h>
+
+#include "debug.h"
 
 extern char **environ;
 void execute(char **args);
