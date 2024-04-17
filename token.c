@@ -11,22 +11,23 @@
  * @user_input: The input string to be parsed.
  * @args: An array of strings where the parsed
  * arguments will be stored.
- * @max_args: The maximum number of arguments that can
- * be stored in `args`.
  */
-void get_arg(char *user_input, char **args, size_t max_args)
+char **get_arg(char *user_input)
 {
 	char *tok;
 	unsigned int count = 0;
+	char **args;
+	size_t len;
 
-	user_input[strlen(user_input) - 1] = '\0';
+	len = _strlen(user_input);
+	args = malloc(sizeof(char *) * len);
 	tok = strtok(user_input, " ");
-
-	while (tok && count < max_args - 1)
+	while (tok)
 	{
 		args[count] = tok;
 		count++;
 		tok = strtok(NULL, " ");
 	}
 	args[count] = NULL;
+	return (args);
 }
