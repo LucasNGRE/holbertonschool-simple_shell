@@ -31,7 +31,8 @@ int main(void)
 		if (bytes_numb <= 1)
 			continue;
 		execute(user_input, args);
+		free(user_input);
 	}
-	free(user_input);
+
 	return (0);
 }
