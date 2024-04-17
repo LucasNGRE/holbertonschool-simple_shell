@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/wait.h>
+#include <sys/types.h>
 extern char **environ;
 void execute(char *user_input, char **args);
 void get_arg(char *user_input, char **args, size_t max_args);
