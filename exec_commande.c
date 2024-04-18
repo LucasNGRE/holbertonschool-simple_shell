@@ -35,5 +35,4 @@ void get_path(char **get_args)
 	char *copy = strdup(path);
 	char *token;
 	char alloc_memory_path[512];
-
 }
