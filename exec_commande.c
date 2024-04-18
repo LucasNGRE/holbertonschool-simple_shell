@@ -28,3 +28,12 @@ void execute(char **args)
 		wait(&status);
 	}
 }
+
+void get_path(char **get_args)
+{
+	char *path = getenv("PATH");
+	char *copy = strdup(path);
+	char *token;
+	char alloc_memory_path[512];
+
+}
