@@ -31,20 +31,22 @@ int main(void)
 	ssize_t bytes_numb;
 	char **args;
 
-	while (1)
+	while (bytes_numb != -1)
 	{
 		if (isatty(STDIN_FILENO))
 			printf("#cisfun$ ");
 		fflush(stdout);
 		bytes_numb = getline(&user_input, &len, stdin);
-		user_input[_strlen(user_input) - 1] = '\0';
-		dinfo("user_input: %s", user_input);
-
 		if (bytes_numb == -1)
 		{
 			printf("\n");
+			free(user_input);
+			exit(EXIT_SUCCESS);
 			break;
 		}
+		user_input[_strlen(user_input) - 1] = '\0';
+		dinfo("user_input: %s", user_input);
+
 		if (_strlen(user_input) == 0)
 			continue;
 		if (bytes_numb <= 1)
