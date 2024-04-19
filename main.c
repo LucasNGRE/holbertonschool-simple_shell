@@ -58,8 +58,8 @@ int main(void)
 			continue;
 		if (bytes_numb <= 1)
 			continue;
-		get_path(args);
 		args = get_arg(user_input);
+		args = get_path(args);
 		execute(args), free_args(args);
 	}
 	return (0);

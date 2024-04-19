@@ -12,6 +12,7 @@ void execute(char **args)
 	pid = fork();
 	if (pid == 0)
 	{
+		dinfo("Command is %s", args[0]);
 		if (execve(args[0], args, environ) == -1)
 		{
 			perror("./shell");
@@ -29,12 +30,12 @@ void execute(char **args)
 	}
 }
 
-void get_path(char **get_args)
+char **get_path(char **args)
 {
 	char *path = getenv("PATH");
 	char *copy = _strdup(path);
 	char *path_token;
-	char alloc_memory_path[512];
+	char *alloc_memory_path;
 
 	if (copy == NULL)
 	{
@@ -45,16 +46,20 @@ void get_path(char **get_args)
 
 	while (path_token != NULL)
 	{
-		copy = alloc_memory_path;
+		dinfo("path_token: %s\n", path_token);
+		alloc_memory_path = malloc(sizeof(char) * (_strlen(path_token) + _strlen(args[0]) + 2));
+		sprintf(alloc_memory_path, "%s/%s", path_token, args[0]);
 		if (access(alloc_memory_path, X_OK) == 0)
 		{
-			derror("alloc_memory_path: %s\n", alloc_memory_path);
-			get_args[0] = _strdup(alloc_memory_path);
-			free(copy);
+			dsuccess("alloc_memory_path: %s\n", alloc_memory_path);
+			_strcpy(copy, alloc_memory_path);
+			args[0] = alloc_memory_path;
 			break;
 		}
+		free(alloc_memory_path);
 		path_token = strtok(NULL, ":");
-
 	}
 	free(copy);
+	
+	return (args);
 }
