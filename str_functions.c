@@ -18,7 +18,8 @@ size_t _strlen(const char *str)
  * _strdup - Duplicate a string.
  * @str: The string to duplicate.
  *
- * Return: A pointer to the newly allocated memory containing a copy of the string.
+ * Return: A pointer to the newly allocated memory
+ * containing a copy of the string.
  */
 char *_strdup(const char *str)
 {
