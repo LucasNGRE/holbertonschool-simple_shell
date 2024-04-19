@@ -56,23 +56,18 @@ char **get_path(char **args)
 		dinfo("path_token: %s\n", path_token);
 		alloc_memory_path = malloc(sizeof(char) *
 		(_strlen(path_token) + _strlen(args[0]) + 2));
-		if (alloc_memory_path == NULL)
-		{
-			perror("malloc");
-			exit(EXIT_FAILURE);
-		}
 		sprintf(alloc_memory_path, "%s/%s", path_token, args[0]);
 		if (access(alloc_memory_path, X_OK) == 0)
 		{
 			dsuccess("alloc_memory_path: %s\n", alloc_memory_path);
-			_strcpy(args[0], alloc_memory_path);
-			free (copy);
-			return (args);
+			_strcpy(copy, alloc_memory_path);
+			args[0] = alloc_memory_path;
+			break;
 		}
 		free(alloc_memory_path);
 		path_token = strtok(NULL, ":");
 	}
 	free(copy);
 
-	return (NULL);
+	return (args);
 }
