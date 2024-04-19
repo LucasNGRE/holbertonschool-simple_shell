@@ -37,12 +37,12 @@ void execute(char **args)
  * le chemin complet de l'exécutable,
  *         ou NULL s'il n'est pas trouvé dans le PATH ou en cas d'erreur.
  */
-char get_path(char args)
+char **get_path(char **args)
 {
-	char path = getenv("PATH");
-	charcopy = _strdup(path);
-	char path_token;
-	charalloc_memory_path;
+	char *path = getenv("PATH");
+	char *copy = _strdup(path);
+	char *path_token;
+	char *alloc_memory_path;
 
 	if (copy == NULL)
 	{
