@@ -33,6 +33,26 @@ void get_path(char **get_args)
 {
 	char *path = getenv("PATH");
 	char *copy = strdup(path);
-	char *token;
+	char *path_token;
 	char alloc_memory_path[512];
+
+if (copy == NULL)
+{
+	perror("strdup");
+	exit(EXIT_FAILURE);
+}
+path_token = strtok(copy, ":");
+
+while (path_token != NULL)
+{
+	if (access(alloc_memory_path, X_OK) == 0)
+	{
+		get_args[0] = strdup(alloc_memory_path);
+		free(copy);
+		return;
+	}
+	path_token = strtok(NULL, ":");
+
+}
+free(copy);
 }
