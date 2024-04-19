@@ -17,5 +17,5 @@ void execute(char **args);
 char **get_arg(char *user_input);
 size_t _strlen(const char *str);
 void environnement(void);
-
+void get_path(char **get_args);
 #endif
