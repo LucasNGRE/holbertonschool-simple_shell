@@ -39,7 +39,6 @@ int main(void)
 		bytes_numb = getline(&user_input, &len, stdin);
 		if (bytes_numb == -1)
 		{
-			printf("\n");
 			free(user_input);
 			exit(EXIT_SUCCESS);
 			break;

@@ -25,11 +25,12 @@ char *_strdup(const char *str)
 {
 	char *new_str;
 	size_t len = _strlen(str);
+	size_t i;
 
 	new_str = malloc(len + 1);
 	if (new_str == NULL)
 		return (NULL);
-	for (size_t i = 0; i < len; i++)
+	for (i = 0; i < len; i++)
 		new_str[i] = str[i];
 	new_str[len] = '\0';
 	return (new_str);
