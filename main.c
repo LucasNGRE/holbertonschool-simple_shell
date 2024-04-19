@@ -37,7 +37,6 @@ int main(void)
 			printf("#cisfun$ ");
 		fflush(stdout);
 		bytes_numb = getline(&user_input, &len, stdin);
-		bytes_numb -= 1;
 		if (bytes_numb == -1)
 		{
 			free(user_input);
