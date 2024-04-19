@@ -1,7 +1,6 @@
 #include "main.h"
 /**
  * execute - Execute a command with its arguments
- * @user_input: The command to execute
  * @args: An array of strings containing the command and its arguments
  */
 void execute(char **args)
@@ -29,7 +28,15 @@ void execute(char **args)
 		wait(&status);
 	}
 }
-
+/**
+ * get_path - Recherche le chemin complet d'un exécutable dans le PATH
+ * @args: Un tableau de chaînes de caractères contenant la
+ * commande et ses arguments
+ *
+ * Return: Un tableau de chaînes de caractères contenant
+ * le chemin complet de l'exécutable,
+ *         ou NULL s'il n'est pas trouvé dans le PATH ou en cas d'erreur.
+ */
 char **get_path(char **args)
 {
 	char *path = getenv("PATH");
@@ -47,7 +54,8 @@ char **get_path(char **args)
 	while (path_token != NULL)
 	{
 		dinfo("path_token: %s\n", path_token);
-		alloc_memory_path = malloc(sizeof(char) * (_strlen(path_token) + _strlen(args[0]) + 2));
+		alloc_memory_path = malloc(sizeof(char) *
+		(_strlen(path_token) + _strlen(args[0]) + 2));
 		sprintf(alloc_memory_path, "%s/%s", path_token, args[0]);
 		if (access(alloc_memory_path, X_OK) == 0)
 		{
@@ -60,6 +68,6 @@ char **get_path(char **args)
 		path_token = strtok(NULL, ":");
 	}
 	free(copy);
-	
+
 	return (args);
 }

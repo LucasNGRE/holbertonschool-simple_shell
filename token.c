@@ -1,17 +1,10 @@
 #include "main.h"
-
 /**
- * get_arg - Parse user input into arguments.
+ * get_arg - Tokenize a string into an array of strings
+ * @user_input: The string to tokenize
  *
- * Description: This function parses a user input string into
- * individual arguments and stores
- * them in an array of strings. It uses space (' ') as the
- * delimiter to separate
- * the arguments.
- *
- * @user_input: The input string to be parsed.
- * @args: An array of strings where the parsed
- * arguments will be stored.
+ * Return: An array of strings containing the tokens,
+ * or NULL if an error occurs
  */
 char **get_arg(char *user_input)
 {
