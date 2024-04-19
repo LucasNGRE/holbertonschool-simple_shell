@@ -18,4 +18,7 @@ char **get_arg(char *user_input);
 size_t _strlen(const char *str);
 void environnement(void);
 void get_path(char **get_args);
+char *_strcpy(char *dest, const char *src);
+int _strcmp(const char *s1, const char *s2);
+char *_strdup(const char *str);
 #endif
