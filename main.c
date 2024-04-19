@@ -45,9 +45,9 @@ int main(void)
 			break;
 		}
 		user_input[_strlen(user_input) - 1] = '\0';
-		if (strcmp(user_input, "exit") == 0)
+		if (_strcmp(user_input, "exit") == 0)
 			break;
-		else if (strcmp(user_input, "env") == 0)
+		else if (_strcmp(user_input, "env") == 0)
 		{
 			environnement();
 			continue;

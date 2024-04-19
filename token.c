@@ -26,7 +26,7 @@ char **get_arg(char *user_input)
 	while (tok)
 	{
 		dinfo("Current token: %s", tok);
-		args[count] = strdup(tok);
+		args[count] = _strdup(tok);
 		count++;
 		tok = strtok(NULL, " ");
 		dinfo("Setted token to: %s\n", args[count - 1]);
