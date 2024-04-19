@@ -1,7 +1,7 @@
 #ifndef DEBUG_H
 #define DEBUG_H
 
-#define DEBUG 1 /* Set to 1 to enable debug messages */
+#define DEBUG 0 /* Set to 1 to enable debug messages */
 
 /* debug.c */
 int dinfo(const char *format, ...);
