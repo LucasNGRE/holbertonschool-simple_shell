@@ -60,6 +60,12 @@ int main(void)
 		if (bytes_numb <= 1)
 			continue;
 		args = get_arg(user_input);
+		if (args == NULL)
+		{
+			perror("Error");
+			exit(EXIT_FAILURE);
+			break;
+		}
 		args = get_path(args);
 		execute(args), free_args(args);
 	}

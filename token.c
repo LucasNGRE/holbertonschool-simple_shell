@@ -38,6 +38,8 @@ char **get_arg(char *user_input)
 
 	len = command_counter(user_input);
 	args = malloc(sizeof(char *) * (len + 2));
+	if (args == NULL)
+		return (NULL);
 	tok = strtok(user_input, " ");
 
 	while (tok)
