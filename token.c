@@ -1,5 +1,10 @@
 #include "main.h"
-
+/**
+ * command_counter - Counts the number of individual commands in a string.
+ * @user_input: The input string to be analyzed.
+ *
+ * Return: The number of individual commands.
+ */
 int command_counter(char *user_input)
 {
 	int i = 0;
@@ -14,6 +19,7 @@ int command_counter(char *user_input)
 		}
 		i++;
 	}
+	dinfo("counter : %d", count);
 	return (count);
 }
 /**
@@ -31,7 +37,7 @@ char **get_arg(char *user_input)
 	size_t len = 0;
 
 	len = command_counter(user_input);
-	args = malloc(sizeof(char *) * (len) + 2);
+	args = malloc(sizeof(char *) * (len + 2));
 	tok = strtok(user_input, " ");
 
 	while (tok)
@@ -39,6 +45,7 @@ char **get_arg(char *user_input)
 		dinfo("Current token: %s", tok);
 		if (_strcmp(tok, " ") != 0 && _strcmp(tok, "\n") != 0)
 		{
+			dinfo("token : adding '%s' to args", tok);
 			args[count] = _strdup(tok);
 			count++;
 		}
