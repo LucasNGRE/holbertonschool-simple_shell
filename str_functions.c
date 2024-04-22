@@ -73,3 +73,36 @@ int _strcmp(const char *s1, const char *s2)
 	}
 	return (*s1 - *s2);
 }
+/**
+ * getenv - get the value of an environment variable
+ * @name: the name of the environment variable to retrieve
+ *
+ * This function retrieves the value of the
+ * environment variable specified by
+ * @name. If the variable is found, it returns a pointer
+ *  to the value string.
+ * If the variable is not found, it returns NULL.
+ *
+ * Return: a pointer to the value of the environment
+ * variable, or NULL if not found.
+ */
+const char *_getenv(const char *name)
+{
+	char **env;
+
+	for (env = environ; *env != NULL; env++)
+	{
+		const char *env_name = *env;
+		const char *name_ptr = name;
+
+		while (*name_ptr != '\0' && *env_name != '\0' && *name_ptr == *env_name)
+		{
+			name_ptr++;
+			env_name++;
+		}
+
+		if (*name_ptr == '\0' && *env_name == '=')
+			return (env_name + 1);
+	}
+	return (NULL);
+}
