@@ -39,7 +39,7 @@ void execute(char **args)
  */
 char **get_path(char **args)
 {
-	char *path = _getenv("PATH");
+	const char *path = _getenv("PATH");
 	char *copy = _strdup(path);
 	char *path_token;
 	char *alloc_memory_path;
