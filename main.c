@@ -42,7 +42,7 @@ int main(void)
 		{
 			if (is_interactive)
 				printf("\n");
-			// free(user_input);
+			free(user_input);
 			exit(EXIT_SUCCESS);
 			break;
 		}
@@ -62,7 +62,7 @@ int main(void)
 			continue;
 		args = get_arg(user_input);
 		args = get_path(args);
-		execute(args), free_args(args), free(user_input);
+		execute(args), free_args(args);
 	}
 	return (0);
 }
