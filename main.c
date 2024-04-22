@@ -27,22 +27,27 @@ void free_args(char **args)
 int main(void)
 {
 	char *user_input = NULL;
-	size_t len = 0;
+	size_t len = 1;
 	ssize_t bytes_numb;
 	char **args;
 
-	while (bytes_numb != -1)
+	while (bytes_numb !=1)
 	{
 		if (isatty(STDIN_FILENO))
 			printf("#cisfun$ ");
 		fflush(stdout);
 		bytes_numb = getline(&user_input, &len, stdin);
-		if (bytes_numb == -1)
-		{
-			free(user_input);
-			exit(EXIT_SUCCESS);
-			break;
-		}
+			if (bytes_numb == -1)
+			{
+				if (isatty(STDIN_FILENO))
+				{
+					fflush(stdout);
+					printf("\n");
+				}
+				free(user_input);
+				exit(EXIT_SUCCESS);
+				break;
+			}
 		user_input[_strlen(user_input) - 1] = '\0';
 		if (_strcmp(user_input, "exit") == 0)
 			break;
