@@ -44,7 +44,6 @@ int main(void)
 				printf("\n");
 			free(user_input);
 			exit(EXIT_SUCCESS);
-			break;
 		}
 		user_input[_strlen(user_input) - 1] = '\0';
 		if (_strcmp(user_input, "exit") == 0)
