@@ -28,17 +28,20 @@ int main(void)
 {
 	char *user_input = NULL;
 	size_t len = 0;
-	ssize_t bytes_numb;
+	ssize_t bytes_numb = 0;
 	char **args;
+	int is_interactive = isatty(STDIN_FILENO);
 
 	while (bytes_numb != -1)
 	{
-		if (isatty(STDIN_FILENO))
+		if (is_interactive)
 			printf("#cisfun$ ");
 		fflush(stdout);
 		bytes_numb = getline(&user_input, &len, stdin);
 		if (bytes_numb == -1)
 		{
+			if (is_interactive)
+				printf("\n");
 			free(user_input);
 			exit(EXIT_SUCCESS);
 			break;
