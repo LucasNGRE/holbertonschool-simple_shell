@@ -14,8 +14,11 @@ char **get_arg(char *user_input)
 	size_t len;
 
 	len = _strlen(user_input);
-	args = malloc(sizeof(char *) * len);
 	tok = strtok(user_input, " ");
+	args = malloc(sizeof(char *) * len);
+
+	if (args == NULL)
+		return (NULL);
 	while (tok)
 	{
 		dinfo("Current token: %s", tok);
