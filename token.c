@@ -11,12 +11,13 @@ char **get_arg(char *user_input)
 	char *tok;
 	unsigned int count = 0;
 	char **args;
-	size_t len;
+	size_t len = 0;
 
 	len = _strlen(user_input);
-	tok = strtok(user_input, " ");
 	args = malloc(sizeof(char *) * len);
-	
+	tok = strtok(user_input, " ");
+
+
 	while (tok)
 	{
 		dinfo("Current token: %s", tok);
