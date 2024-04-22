@@ -11,7 +11,7 @@ char **get_arg(char *user_input)
 	char *tok;
 	unsigned int count = 0;
 	char **args;
-	size_t len = 0;
+	size_t len;
 
 	len = _strlen(user_input);
 	args = malloc(sizeof(char *) * len);
