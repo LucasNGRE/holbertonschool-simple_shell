@@ -25,7 +25,7 @@ char *_strdup(const char *str)
 {
 	char *new_str;
 	size_t len = _strlen(str);
-	size_t i;
+	int i;
 
 	new_str = malloc(sizeof (char) * (len + 1));
 	if (new_str == NULL)
@@ -45,7 +45,7 @@ char *_strdup(const char *str)
  */
 char *_strcpy(char *dest, const char *src)
 {
-	size_t i = 0;
+	int i = 0;
 
 	while (src[i])
 	{
