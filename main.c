@@ -44,7 +44,6 @@ int main(void)
 				printf("\n");
 			free(user_input);
 			exit(EXIT_SUCCESS);
-			break;
 		}
 		user_input[_strlen(user_input) - 1] = '\0';
 		if (_strcmp(user_input, "exit") == 0)
@@ -61,7 +60,9 @@ int main(void)
 		if (bytes_numb <= 1)
 			continue;
 		args = get_arg(user_input);
+		printf("args[0]: %s\n", args[0]);
 		args = get_path(args);
+		printf("args[0]: %s\n", args[0]);
 		execute(args), free_args(args);
 	}
 	return (0);
