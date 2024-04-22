@@ -45,8 +45,8 @@ char **get_arg(char *user_input)
 		dinfo("Current token: %s", tok);
 		if (_strcmp(tok, " ") != 0 && _strcmp(tok, "\n") != 0)
 		{
-			dinfo("token : adding '%s' to args", tok);
 			args[count] = _strdup(tok);
+			dinfo("token : adding '%s' to args", args[count]);
 			count++;
 		}
 		tok = strtok(NULL, " ");

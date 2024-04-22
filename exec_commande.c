@@ -61,6 +61,7 @@ char **get_path(char **args)
 		{
 			dsuccess("alloc_memory_path: %s\n", alloc_memory_path);
 			_strcpy(copy, alloc_memory_path);
+			free(args[0]);
 			args[0] = alloc_memory_path;
 			break;
 		}
