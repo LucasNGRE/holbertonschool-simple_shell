@@ -38,8 +38,6 @@ int main(void)
 			printf("#cisfun$ ");
 		fflush(stdout);
 		bytes_numb = getline(&user_input, &len, stdin);
-		if (user_input == NULL)
-			return ('\0');
 		if (bytes_numb == -1)
 		{
 			if (is_interactive)
