@@ -1,4 +1,21 @@
 #include "main.h"
+
+int command_counter(char *user_input)
+{
+	int i = 0;
+	int count = 0;
+	
+	while (user_input[i])
+	{
+		if (user_input[i] == ' ')
+		{
+			if (user_input[i + 1] != ' ' && user_input[i + 1] != '\n')
+				count++;
+		}
+		i++;
+	}
+	return (count);
+}
 /**
  * get_arg - Tokenize a string into an array of strings
  * @user_input: The string to tokenize
@@ -13,15 +30,18 @@ char **get_arg(char *user_input)
 	char **args;
 	size_t len = 0;
 
-	len = _strlen(user_input);
-	args = malloc(sizeof(char *) * len);
+	len = command_counter(user_input);
+	args = malloc(sizeof(char *) * (len) + 2);
 	tok = strtok(user_input, " ");
 
 	while (tok)
 	{
 		dinfo("Current token: %s", tok);
-		args[count] = _strdup(tok);
-		count++;
+		if (_strcmp(tok, " ") != 0 && _strcmp(tok, "\n") != 0)
+		{
+			args[count] = _strdup(tok);
+			count++;
+		}
 		tok = strtok(NULL, " ");
 		dinfo("Setted token to: %s\n", args[count - 1]);
 	}
