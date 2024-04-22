@@ -42,7 +42,7 @@ int main(void)
 		{
 			if (is_interactive)
 				printf("\n");
-			free(user_input);
+			// free(user_input);
 			exit(EXIT_SUCCESS);
 		}
 		user_input[_strlen(user_input) - 1] = '\0';
@@ -62,8 +62,12 @@ int main(void)
 		args = get_arg(user_input);
 		printf("args[0]: %s\n", args[0]);
 		args = get_path(args);
+<<<<<<< HEAD
 		printf("args[0]: %s\n", args[0]);
 		execute(args), free_args(args);
+=======
+		execute(args), free_args(args), free(user_input);
+>>>>>>> f06401a70e895a1425d6925a5c6b6f68bfcf8a7b
 	}
 	return (0);
 }
