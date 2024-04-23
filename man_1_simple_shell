@@ -1,1 +1,39 @@
 .TH SIMPLE SHELL 1 "2024, April" "version 1.0"
+.SH \fB\fUNAME\fR\fR
+shell \- simple shell interpreter
+.SH \fB\fUSYNOPSIS\fR\fR
+.B shell
+.SH \fB\fUDESCRIPTION\fR\fR
+The
+.B shell
+is a simple shell interpreter that reads commands from the user and executes them. It supports a few built-in commands and can execute any other command that is available in the system's PATH.
+.PP
+The shell supports the following built-in commands:
+.IP "\fBexit\fR"
+Exits the shell.
+.IP "\fBenv\fR"
+Prints the environment variables.
+.SH \fB\fUUSAGE\fR\fR
+To start the shell, simply run the `shell` executable. You will be presented with a prompt where you can enter commands.
+.PP
+To exit the shell, type `exit` at the prompt.
+.SH \fB\fUEXEMPLES\fR\fR
+Start the shell:
+.RS
+.B $ ./shell
+.RE
+Print the environment variables:
+.RS
+.B #cisfun$ env
+.RE
+Exit the shell:
+.RS
+.B #cisfun$ exit
+.RE
+.SH \fB\fUSEE ALSO\fR\fR
+bash(1), sh(1), dash(1), ksh(1), csh(1), tcsh(1), zsh(1)
+.SH \fB\fUBUGS\fR\fR
+No known bugs.
+.SH \fB\fUAUTHORS\fR\fR
+.P
+.B Writted by Lucas NEGRE and Marion SAINT-MARTIN.
