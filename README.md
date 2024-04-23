@@ -102,7 +102,7 @@ hsh main.c shell.c test_ls_2
 ## Files description
 | Files     | Description                       |
 | :------- | :-------------------------------- |
-| Authors | Contains the names and email addresses of the various authors. |
+| `Authors` | Contains the names and email addresses of the various authors. |
 | `environnement.c` | Contain The `environnement` function displays the currently defined environment variables. |
 | `exec_commande.c` | Provides essential functionality for executing commands and searching for executables within the PATH, which are fundamental components of a shell program. |
 | `main.c` | All the functions to handle various format specifers for our "printf" |
