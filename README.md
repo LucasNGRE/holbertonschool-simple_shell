@@ -102,12 +102,12 @@ hsh main.c shell.c test_ls_2
 ## Files description
 | Files     | Description                       |
 | :------- | :-------------------------------- |
-| Authors | Contains the names and email addresses of the various authors. |
+| `Authors` | Contains the names and email addresses of the various authors. |
 | `environnement.c` | Contain The `environnement` function displays the currently defined environment variables. |
 | `exec_commande.c` | Provides essential functionality for executing commands and searching for executables within the PATH, which are fundamental components of a shell program. |
 | `main.c` | All the functions to handle various format specifers for our "printf" |
 | `main.h` | Contain libraries and function prototype |
-| `man_1_simple_shell | The manual of our simple shell |
+| `man_1_simple_shell` | The manual of our simple shell |
 | `str_functions.c` | A set of utility functions commonly used in programs written in the C language. These functions are designed to facilitate string manipulation and access to environment variables in a program. |
 | `token.c` | Provides functionality for counting individual commands in a string and tokenizing a string into an array of strings, which are common tasks in parsing user input in a shell program. |
 
