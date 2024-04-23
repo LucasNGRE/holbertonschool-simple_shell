@@ -47,14 +47,16 @@ int main(void)
 		}
 		user_input[_strlen(user_input) - 1] = '\0';
 		if (_strcmp(user_input, "exit") == 0)
-			break;
+		{
+			if (is_interactive)
+				break;
+			continue;
+		}
 		else if (_strcmp(user_input, "env") == 0)
 		{
 			environnement();
 			continue;
 		}
-		dinfo("user_input: %s", user_input);
-
 		if (_strlen(user_input) == 0)
 			continue;
 		if (bytes_numb <= 1)
