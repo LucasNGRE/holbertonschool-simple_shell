@@ -9,11 +9,20 @@
     Compilation
     Testing
     Authors
+
+### 📝 Objective
+To write a simple UNIX command interpreter.
 ### Introduction 
 This project is a simple Unix shell implementation written in C. It provides basic shell functionalities
 such as command execution, built-in commands support, and environment variable handling.
 This shell is designed to be lightweight and easy to understand, making it suitable for
 learning purposes or as a base for building more complex shell environments.
+
+### 🛠️ Tech Stack
+- <img src="https://img.shields.io/badge/C-a8b9cc?logo=c&logoColor=black&style=for-the-badge" alt="C badge">
+- <img src="https://img.shields.io/badge/Git-f05032?logo=git&logoColor=white&style=for-the-badge" alt="Git badge">
+- <img src="https://img.shields.io/badge/SHELL-000000?logo=powershell&logoColor=white&style=for-the-badge" alt="Shell badge">
+- <img src="https://img.shields.io/badge/UBUNTU-e95420?logo=ubuntu&logoColor=white&style=for-the-badge" alt="Ubuntu badge">
 ### Requirements
     
     Allowed editors: vi, vim, emacs
@@ -25,7 +34,7 @@ learning purposes or as a base for building more complex shell environments.
     No more than 5 functions per file
     All your header files should be include guarded
     Use system calls only when you need to (why?)
-
+    
 ### List of allowed functions and system calls+
 
     all functions from string.h
@@ -111,7 +120,49 @@ hsh main.c shell.c test_ls_2
 | `str_functions.c` | A set of utility functions commonly used in programs written in the C language. These functions are designed to facilitate string manipulation and access to environment variables in a program. |
 | `token.c` | Provides functionality for counting individual commands in a string and tokenizing a string into an array of strings, which are common tasks in parsing user input in a shell program. |
 
+##  <span id="install">How to install run and use our Simple Shell</a>
+
+### Install and run:
+
+To install and run Simple Shell, follow these steps:
+
+Clone the repository using the following command:
+```
+git clone https://github.com/Pandolowitz/holbertonschool-simple_shell.git
+```
+
+Navigate to the directory where the repository was cloned.
+
+Compile the program by running the following command:
+```
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+```
+
+Run the program by typing the following command:
+```
+./hsh
+```
+
+### Using the Simple Shell:
+
+To use Simple Shell, type a command and press Enter.
+<br>
+The program will execute the command and display the output on the screen.
+
+Here are some examples of commands that you can run:
+
+- `ls`: list the contents of the current directory.
+- `pwd`: print the path of the current working directory.
+- `echo`: display a message on the screen.
+- `mkdir`: create a new directory.
+- `exit`: exit the shell.
+- `ls -l`: list the contents of the current directory in long format.
+
 ## Authors
 [@Lucas NEGRE](https://www.github.com/LucasNGRE)
 
 [@Marion SAINT-MARTIN](https://github.com/NamaKa298)
+
+
+
+        
