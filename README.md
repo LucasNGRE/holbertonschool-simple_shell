@@ -112,6 +112,6 @@ hsh main.c shell.c test_ls_2
 | `token.c` | Provides functionality for counting individual commands in a string and tokenizing a string into an array of strings, which are common tasks in parsing user input in a shell program. |
 
 ## Authors
-Lucas NEGRE 8846@holbertonstudents.com
+[@Lucas NEGRE](https://www.github.com/LucasNGRE)
 
-Marion SAINT-MARTIN 8948@holbertonstudents.com
+[@Marion SAINT-MARTIN](https://github.com/NamaKa298)
