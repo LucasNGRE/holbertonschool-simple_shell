@@ -178,5 +178,3 @@ Here are some examples of commands that you can run:
 [@Lucas NEGRE](https://www.github.com/LucasNGRE)
 
 [@Marion SAINT-MARTIN](https://github.com/NamaKa298)
-
-
