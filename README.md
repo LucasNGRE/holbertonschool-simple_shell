@@ -1,9 +1,9 @@
 # HOLBERTONSCHOOL SIMPLE SHELL
 ![Logo](https://www.kindpng.com/picc/m/454-4544393_shell-script-logo-hd-png-download.png)
 
-### Table of Contents
+## Table of Contents
 
-    Objective
+    <a href="#objective">Objective</a>
     Introduction
     Tech Stack
     Requirements
@@ -15,20 +15,20 @@
     Using the Simple Shell
     Authors
 
-### 📝 Objective
+## 📝 <span id="objective">Objective</span>
 To write a simple UNIX command interpreter.
-### Introduction 
+## Introduction 
 This project is a simple Unix shell implementation written in C. It provides basic shell functionalities
 such as command execution, built-in commands support, and environment variable handling.
 This shell is designed to be lightweight and easy to understand, making it suitable for
 learning purposes or as a base for building more complex shell environments.
 
-### 🛠️ Tech Stack
+## 🛠️ Tech Stack
 - <img src="https://img.shields.io/badge/C-a8b9cc?logo=c&logoColor=black&style=for-the-badge" alt="C badge">
 - <img src="https://img.shields.io/badge/Git-f05032?logo=git&logoColor=white&style=for-the-badge" alt="Git badge">
 - <img src="https://img.shields.io/badge/SHELL-000000?logo=powershell&logoColor=white&style=for-the-badge" alt="Shell badge">
 - <img src="https://img.shields.io/badge/UBUNTU-e95420?logo=ubuntu&logoColor=white&style=for-the-badge" alt="Ubuntu badge">
-### Requirements
+## Requirements
     
     Allowed editors: vi, vim, emacs
     All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -40,7 +40,7 @@ learning purposes or as a base for building more complex shell environments.
     All your header files should be include guarded
     Use system calls only when you need to (why?)
     
-### List of allowed functions and system calls+
+## List of allowed functions and system calls+
 
     all functions from string.h
     access (man 2 access)
@@ -80,13 +80,13 @@ learning purposes or as a base for building more complex shell environments.
     wait4 (man 2 wait4)
     write (man 2 write)
 
-### Compilation
+## Compilation
 
 Your shell will be compiled this way:
 
     `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`
 
-### Testing
+## Testing
 
 Your shell should work like this in interactive mode:
 
@@ -127,7 +127,7 @@ hsh main.c shell.c test_ls_2
 
 ##  <span id="install">How to install run and use our Simple Shell</a>
 
-### Install and run
+## Install and run
 
 To install and run Simple Shell, follow these steps:
 
@@ -148,7 +148,7 @@ Run the program by typing the following command:
 ./hsh
 ```
 
-### Using the Simple Shell
+## Using the Simple Shell
 
 To use Simple Shell, type a command and press Enter.
 <br>
