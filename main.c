@@ -20,16 +20,35 @@ void free_args(char **args)
 }
 
 /**
+ * is_path - checks if the command is a path
+ * @command: command to check
+ * Return: 1 if it is a path, 0 if not
+ */
+int is_path(char *command)
+{
+    int i = 0;
+
+    while (command[i])
+    {
+        if (command[i] == '/')
+            return (1);
+        i++;
+    };
+    return (0);
+}
+
+/**
  * main - Entry point for the simple_shell
  *
  * Return: Always 0
  */
-int main(void)
+int main(__attribute__((unused)) int argc, char **argv)
 {
 	char *user_input = NULL;
 	size_t len = 0;
 	ssize_t bytes_numb = 0;
 	char **args;
+	char *name = argv[0];
 	int is_interactive = isatty(STDIN_FILENO);
 
 	while (bytes_numb != -1)
@@ -63,6 +82,15 @@ int main(void)
 			continue;
 		}
 		args = get_path(args);
+		if (!is_path(args[0]))
+		{
+			fprintf(stderr,
+        	"%s: %s: command not found\n",
+    		name,
+    		user_input);
+			free_args(args);
+			continue;
+		}
 		execute(args), free_args(args);
 	}
 	return (0);
