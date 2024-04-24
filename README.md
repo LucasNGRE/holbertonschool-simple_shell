@@ -3,11 +3,16 @@
 
 ### Table of Contents
 
+    Objective
     Introduction
+    Tech Stack
     Requirements
     List of allowed functions and system calls+
     Compilation
     Testing
+    Files description
+    Install and run
+    Using the Simple Shell
     Authors
 
 ### 📝 Objective
@@ -122,7 +127,7 @@ hsh main.c shell.c test_ls_2
 
 ##  <span id="install">How to install run and use our Simple Shell</a>
 
-### Install and run:
+### Install and run
 
 To install and run Simple Shell, follow these steps:
 
@@ -143,7 +148,7 @@ Run the program by typing the following command:
 ./hsh
 ```
 
-### Using the Simple Shell:
+### Using the Simple Shell
 
 To use Simple Shell, type a command and press Enter.
 <br>
