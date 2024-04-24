@@ -3,32 +3,44 @@
 
 ## Table of Contents
 
-    <a href="#objective">Objective</a>
-    Introduction
-    Tech Stack
-    Requirements
-    List of allowed functions and system calls+
-    Compilation
-    Testing
-    Files description
-    Install and run
-    Using the Simple Shell
-    Authors
+   <a href="#objective">Objective</a>
+
+   <a href="#introduction">Introduction</a>
+
+   <a href = "#tech">Tech Stack</a>
+
+   <a href = "#requirements">Requirements</a>
+
+   <a href = "#list">List of allowed functions and system calls+</a>
+
+   <a href = "#compilation">Compilation</a>
+
+   <a href = "#testing">Testing</a>
+
+   <a href = "#files">Files description</a>
+
+   <a href = "#install">Install and run</a>
+
+   <a href = "#using">Using the Simple Shell</a>
+
+   <a href = "#authors">Authors</a>
 
 ## 📝 <span id="objective">Objective</span>
 To write a simple UNIX command interpreter.
-## Introduction 
+## <span id="introduction">Introduction</span>
 This project is a simple Unix shell implementation written in C. It provides basic shell functionalities
 such as command execution, built-in commands support, and environment variable handling.
 This shell is designed to be lightweight and easy to understand, making it suitable for
 learning purposes or as a base for building more complex shell environments.
 
-## 🛠️ Tech Stack
+## 🛠️ <span id="tech">Tech Stack</span>
+<p> 
 - <img src="https://img.shields.io/badge/C-a8b9cc?logo=c&logoColor=black&style=for-the-badge" alt="C badge">
 - <img src="https://img.shields.io/badge/Git-f05032?logo=git&logoColor=white&style=for-the-badge" alt="Git badge">
 - <img src="https://img.shields.io/badge/SHELL-000000?logo=powershell&logoColor=white&style=for-the-badge" alt="Shell badge">
 - <img src="https://img.shields.io/badge/UBUNTU-e95420?logo=ubuntu&logoColor=white&style=for-the-badge" alt="Ubuntu badge">
-## Requirements
+</p>
+## <span id="requirements">Requirements</span>
     
     Allowed editors: vi, vim, emacs
     All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
@@ -40,7 +52,7 @@ learning purposes or as a base for building more complex shell environments.
     All your header files should be include guarded
     Use system calls only when you need to (why?)
     
-## List of allowed functions and system calls+
+## <span id="list">List of allowed functions and system calls+</span>
 
     all functions from string.h
     access (man 2 access)
@@ -80,13 +92,13 @@ learning purposes or as a base for building more complex shell environments.
     wait4 (man 2 wait4)
     write (man 2 write)
 
-## Compilation
+## <span id="compilation">Compilation</span>
 
 Your shell will be compiled this way:
 
     `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh`
 
-## Testing
+## <span id="testing">Testing</span>
 
 Your shell should work like this in interactive mode:
 
@@ -113,7 +125,7 @@ $ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 ```
-## Files description
+## <span id="files">Files description</span>
 | Files     | Description                       |
 | :------- | :-------------------------------- |
 | `Authors` | Contains the names and email addresses of the various authors. |
@@ -124,9 +136,7 @@ hsh main.c shell.c test_ls_2
 | `man_1_simple_shell` | The manual of our simple shell |
 | `str_functions.c` | A set of utility functions commonly used in programs written in the C language. These functions are designed to facilitate string manipulation and access to environment variables in a program. |
 | `token.c` | Provides functionality for counting individual commands in a string and tokenizing a string into an array of strings, which are common tasks in parsing user input in a shell program. |
-
-##  <span id="install">How to install run and use our Simple Shell</a>
-
+##  <span id="install">How to install run and use our Simple Shell</span>
 ## Install and run
 
 To install and run Simple Shell, follow these steps:
@@ -148,7 +158,7 @@ Run the program by typing the following command:
 ./hsh
 ```
 
-## Using the Simple Shell
+## <span id="using">Using the Simple Shell</span>
 
 To use Simple Shell, type a command and press Enter.
 <br>
@@ -163,11 +173,8 @@ Here are some examples of commands that you can run:
 - `exit`: exit the shell.
 - `ls -l`: list the contents of the current directory in long format.
 
-## Authors
+##<span id="authors"> Authors</span>
+
 [@Lucas NEGRE](https://www.github.com/LucasNGRE)
 
 [@Marion SAINT-MARTIN](https://github.com/NamaKa298)
-
-
-
-        
