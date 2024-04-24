@@ -50,23 +50,17 @@ int main(void)
 		{
 			if (is_interactive)
 				break;
-			continue;
 		}
 		else if (_strcmp(user_input, "env") == 0)
 		{
 			environnement();
 			continue;
 		}
-		if (_strlen(user_input) == 0)
-			continue;
-		if (bytes_numb <= 1)
-			continue;
 		args = get_arg(user_input);
-		if (args == NULL)
+		if (args[0] == NULL)
 		{
-			perror("Error");
-			exit(EXIT_FAILURE);
-			break;
+			free_args(args);
+			continue;
 		}
 		args = get_path(args);
 		execute(args), free_args(args);

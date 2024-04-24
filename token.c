@@ -5,6 +5,7 @@
  *
  * Return: The number of individual commands.
  */
+
 int command_counter(char *user_input)
 {
 	int i = 0;
@@ -58,3 +59,4 @@ char **get_arg(char *user_input)
 	args[count] = NULL;
 	return (args);
 }
+
