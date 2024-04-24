@@ -48,8 +48,8 @@ int main(void)
 		user_input[_strlen(user_input) - 1] = '\0';
 		if (_strcmp(user_input, "exit") == 0)
 		{
-			if (is_interactive)
-				break;
+			free(user_input);
+			exit(EXIT_SUCCESS);
 		}
 		else if (_strcmp(user_input, "env") == 0)
 		{
