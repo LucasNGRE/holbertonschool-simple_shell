@@ -68,7 +68,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 		if (_strcmp(user_input, "exit") == 0)
 		{
 			free(user_input);
-			exit(EXIT_SUCCESS);
+			exit(EXIT_FAILURE);
 		}
 		else if (_strcmp(user_input, "env") == 0)
 		{
