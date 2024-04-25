@@ -44,7 +44,7 @@ char **get_path(char **args)
 	char *path_token;
 	char *alloc_memory_path;
 
-	if (path == NULL || copy == NULL)
+	if (path == NULL)
 	{
 		perror("get_path");
 		exit(EXIT_FAILURE);
