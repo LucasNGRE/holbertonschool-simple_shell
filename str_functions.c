@@ -92,17 +92,18 @@ const char *_getenv(const char *name)
 
 	for (env = environ; *env != NULL; env++)
 	{
-		const char *env_name = *env;
-		const char *name_ptr = name;
+		char *env_name = *env;
 
-		while (*name_ptr != '\0' && *env_name != '\0' && *name_ptr == *env_name)
+		const char *key = strtok(env_name, "=");
+
+		if (_strlen(key) != _strlen(name))
 		{
-			name_ptr++;
-			env_name++;
+			continue;
 		}
-
-		if (*name_ptr == '\0' && *env_name == '=')
-			return (env_name + 1);
+		if (strncmp(key, name, _strlen(name)))
+		{
+			return (strtok(NULL, "="));
+		}
 	}
 	return (NULL);
 }
