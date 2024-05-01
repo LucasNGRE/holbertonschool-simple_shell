@@ -145,7 +145,7 @@ To install and run Simple Shell, follow these steps:
 
 Clone the repository using the following command:
 ```
-git clone https://github.com/Pandolowitz/holbertonschool-simple_shell.git
+git clone https://github.com/LucasNGRE/holbertonschool-simple_shell.git
 ```
 
 Navigate to the directory where the repository was cloned.
